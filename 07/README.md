@@ -13,22 +13,22 @@ Ahhoz, hogy az online tárolónkba pusholni tudjunk, a tárolónak azonosítania
 ## repository létrehozása
 Hozzunk létre egy új repository-t az online tárolónkban. Ide fogjuk `push`olni a változásokat.
 
-![new_repository](./res/new_repository.jpg)
+![new_repository](./res/new_repository.JPG)
 
 Majd adjuk meg a repository nevét és tegyük publikussá.
 
-![new_repository](./res/create_repository.jpg)
+![new_repository](./res/create_repository.JPG)
 
 
 ## Projekt létrehozása és hozzáadása githez
 Android studioban hozzunk létre egy új projektet, ezt szeretnénk majd feltölteni az online tárolóba. Ha a git telepítésekor bejelöltük a `Windows explorer integration` komponenst, akkor a projekt mappán belül egyszerűen meg tudunk nyitni egy git bash-t:
 
-![open_project](./res/open_project.jpg)
+![open_project](./res/open_project.JPG)
 
 
 Jelenleg a projekt nem egy git repository (`git status` errort fog dobni). Ahhoz, hogy vezessük a változásokat, inicializálnunk kell a gitet projekt mappáján belül (`git init`). Ha ezt megtettük, a `git status` már jelzi is, hogy változások vannak a mappában, amik még nincsenek elmentve.
 
-![git_init](./res/git_init.jpg)
+![git_init](./res/git_init.JPG)
 
 ```
 git add .
@@ -37,22 +37,22 @@ git push
 ```
 
 Még semmi kapcsolat nincs az online tárolónk, és az újonnan létrehozott local repositorynk között, ezért a `git push` hibára fut:
-![git_push_error](./res/git_push_error.jpg)
+![git_push_error](./res/git_push_error.JPG)
 
 Le kell másolnunk az online tárolóban létrehozott repository címét, itt figyeljünk arra, hogy ha az authentikációnál az 1-es megoldást választottuk (`Using a personal authentication token or password`), akkor a menüből a HTTPS címet kell kimásolni, ha pedig az SSH alapú megoldást választottuk akkor... 
 
-![git_repo_url](./res/git_repo_url.jpg)
+![git_repo_url](./res/git_repo_url.JPG)
 
 A kimásolt címet a git által fentebb ajánlott `git remote add <name> <url>` paranccsal tudjuk beállítani. a `name` helyére konvenció szerint az `origin` szó kerül:
 ```
 git remote add origin repository_url
 ```
 
-![git_remote](./res/git_remote.jpg)
+![git_remote](./res/git_remote.JPG)
 
 Ha most megpróbálunk `push`olni, akkor már nem az eddigi hibát kapjuk:
 
-![git_branch_error](./res/git_branch_error.jpg)
+![git_branch_error](./res/git_branch_error.JPG)
 
 Ez azért van, mert a lokálisan létrehozott `master` branchnek még nem mondtuk meg, hogy melyik remote-hoz szeretnénk hozzáadni (egy local git repohoz tartozhat több remote url is)
 ```
@@ -60,14 +60,14 @@ git push --set-upstream origin master
 ```
 `--set-upstream` -> beállítjuk, hogy a push parancs melyik remotera töltse fel a megadott branchhez tartozó változásokat. konvenció szerint a remote neve `origin` (ezt korábban állítottuk be), a branch neve pedig annak a branchnek a neve, amit szeretnénk feltölteni, esetemben `master`.
 
-![git_push_success](./res/git_push_success.jpg)
+![git_push_success](./res/git_push_success.JPG)
 
 A `--set-upstream` kapcsoló helyettesíthető a `-u` kapcsolóval is:
 ```
 git push -u origin master
 ```
 
-![success_commit](./res/success_commit.jpg)
+![success_commit](./res/success_commit.JPG)
 
 
 ## Projekt vezetése gitben
