@@ -123,3 +123,6 @@ runner.runAnAsyncTask(50)
 Az `observe` metódus első paramétere az a példány, ahonnan meg akarjuk figyelni a `LiveData`-t, a második paramétere pedig az [Observer](https://developer.android.com/reference/java/util/Observer) interfész egy implementációja. Ha Android Studioban nézzük a kódot, látni, hogy az `it` valójában az a paraméter, amit a `postValue` metódusnak átadunk.
 
 Vegyük észre, hogy ebben az esetben nem az `AsyncTaskRunner` osztály teszi ki a változásokat a `View`-ra, ő csupán ad nekünk egy objektumot, aminek a `MainActivity`ben meg tudjuk figyelni a változásait, és reagálni tudunk rá a UI threaden.
+
+# Kiegészítés
+[LiveData Explained](https://www.youtube.com/watch?v=suC0OM5gGAA&ab_channel=Stevdza-San)
