@@ -43,7 +43,7 @@ Le kell másolnunk az online tárolóban létrehozott repository címét, itt fi
 
 ![git_repo_url](./res/git_repo_url.JPG)
 
-A kimásolt címet a git által fentebb ajánlott `git remote add <name> <url>` paranccsal tudjuk beállítani. a `name` helyére konvenció szerint az `origin` szó kerül:
+A kimásolt címet a git által fentebb ajánlott `git remote add <name> <url>` paranccsal tudjuk beállítani. A `<name>` helyére konvenció szerint az `origin` szó kerül:
 ```
 git remote add origin repository_url
 ```
@@ -54,7 +54,7 @@ Ha most megpróbálunk `push`olni, akkor már nem az eddigi hibát kapjuk:
 
 ![git_branch_error](./res/git_branch_error.JPG)
 
-Ez azért van, mert a lokálisan létrehozott `master` branchnek még nem mondtuk meg, hogy melyik remote-hoz szeretnénk hozzáadni (egy local git repohoz tartozhat több remote url is)
+Ez azért van, mert a lokálisan létrehozott `master` branchnek még nem mondtuk meg, hogy melyik remote tartozik hozzá (egy local git repohoz tartozhat több remote is, és branchenként kell megmondani, hogy rá melyik az érvényes).
 ```
 git push --set-upstream origin master
 ```
